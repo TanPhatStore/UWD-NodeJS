@@ -4,6 +4,7 @@ const dotenv = require('dotenv')
 const db = require('./src/config/db')
 const authRouter = require('./src/routes/auth')
 const userRouter  = require('./src/routes/user')
+const morgan = require('morgan')
 const app = express()
 const port = 8080 
 
@@ -11,6 +12,7 @@ app.use(express.json())
 app.use(express.urlencoded({extended : true}))
 app.use('/uploads', express.static('uploads'));
 dotenv.config()
+app.use(morgan('combined'))
 app.use(cors())
 
 
