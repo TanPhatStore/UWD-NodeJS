@@ -14,12 +14,12 @@ dotenv.config()
 app.use(cors())
 
 
-// Connect MongoDB
-db.connect()
+// // Connect MongoDB
+// db.connect()
 
-// Routes
-app.use('/v1/auth', authRouter)
-app.use('/v1/user', userRouter)
+// // Routes
+// app.use('/v1/auth', authRouter)
+// app.use('/v1/user', userRouter)
 
 app.get('/',  (req,  res) => {
   res.send('Welcome')
