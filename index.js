@@ -21,6 +21,10 @@ db.connect()
 app.use('/v1/auth', authRouter)
 app.use('/v1/user', userRouter)
 
+app.get('/',  (req,  res) => {
+  res.send('Welcome')
+})
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
