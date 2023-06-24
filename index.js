@@ -5,7 +5,6 @@ const db = require('./src/config/db')
 const authRouter = require('./src/routes/auth')
 const userRouter  = require('./src/routes/user')
 const morgan = require('morgan')
-const path = require('path')
 const app = express()
 const port = 8080 
 
@@ -15,11 +14,11 @@ app.use('/uploads', express.static('uploads'));
 dotenv.config()
 app.use(morgan('combined'))
 app.use(cors([{
-  origin: 'http://localhost:3000'
-},
-{
-  origin: 'https://ic-gaming-download-game.vercel.app/'
-}
+    origin: 'http://localhost:3000'
+  },
+  {
+    origin: 'https://ic-gaming-download-game.vercel.app/'
+  }
 ]));
 
 
