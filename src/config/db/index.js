@@ -1,9 +1,9 @@
 
 const mongoose = require('mongoose')
-
+ 
 async function connect () {
     try {
-        mongoose.connect('mongodb+srv://cjcoding:ducvu0969@cluster0.d70fi.mongodb.net/cjcoding?retryWrites=true&w=majority',{})
+        mongoose.connect(process.env.MONGO_DB,{})
         console.log('Connected to MongoDB')
     } catch (error) {
         console.log(error)

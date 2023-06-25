@@ -8,7 +8,7 @@ class middlewareControllers {
         const token = req.headers.token
         if (token) {
             const accessToken = token.split(" ")[1]
-            jwt.verify(accessToken, 'myserectkey', (err, user) => {
+            jwt.verify(accessToken, process.env.MY_SERECT_KEY, (err, user) => {
                 if (err) {
                     res.json({code : 403, message : "Token is not valid"})
                 } else {

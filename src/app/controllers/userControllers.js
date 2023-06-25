@@ -16,7 +16,7 @@ class userControllers {
     }
     async updateAvatar (req, res) {
         try {
-            await User.updateOne({ _id: req.user_id }, { URL_Avatar : "http://localhost:8080/" + req.file.path })
+            await User.updateOne({ _id: req.user_id }, { URL_Avatar : req.file.path })
             res.json({code : 200, message : 'success'})
         } catch (error) {
             res.json({code : 500, message : 'fail'})

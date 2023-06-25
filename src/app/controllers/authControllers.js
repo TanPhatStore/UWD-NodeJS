@@ -36,7 +36,7 @@ class authControllers {
                     const token = jwt.sign({
                         id : user.id,
                         admin : user.admin
-                    },'myserectkey', {expiresIn : '1d'})
+                    },process.env.MY_SERECT_KEY, {expiresIn : '1d'})
                     res.status(200).json({token : token})
                 }
             }
@@ -66,7 +66,7 @@ class authControllers {
     async checkToken (req, res) {
         const token = req.query.token
         if (token) {
-            jwt.verify(token, 'myserectkey', (err, user) => {
+            jwt.verify(token, process.env.MY_SERECT_KEY, (err, user) => {
                 if (err) {
                     res.json({message : false})
                 } else {
